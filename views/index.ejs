@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coin Index Page</title>
+</head>
+<body>
+
+	<h1>Coin Index Page</h1>
+
+	<ol>
+		<%for(let i = 0; i < coins.length; i++) {%>
+			<li>
+				name: <a href="coins/<%= coins[i].id %>"><%= coins[i].name %></a>
+
+				Is made of: <%= coins[i].content%>
+
+				Design: <%= coins[i].design%>
+			</li>
+
+		<% } %>
+
+	</ol>
+
+</body>
+</html>

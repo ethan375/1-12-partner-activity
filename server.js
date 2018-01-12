@@ -23,6 +23,21 @@ app.use(bodyParser.urlencoded({
 const Coin = require('./models/coins.js');
 
 
+
+app.get("/coins", (req, res) => {
+  Coin.find({}, (err, allCoins) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(allCoins)
+      res.render("index.ejs", {
+        coins: allCoins
+      })
+    }
+  })
+})
+
+
 app.get('/coins/new',(req, res)=>{
   res.render('new.ejs');
 });
@@ -39,6 +54,9 @@ app.post('/coins', (req,res)=>{
 });
 
 
-app.listen(3000, ()=>{
+
+
+
+app.listen(3005, ()=>{
   console.log("server listening");
 })
