@@ -55,6 +55,15 @@ app.post('/coins', (req,res)=>{
 });
 
 
+app.get("/coins/:id", (req, res) => {
+  Coin.findById(req.params.id, (err, coinFound) => {
+    res.render("show.ejs", {
+      coin: coinFound
+    })
+  })
+})
+
+
 
 
 
