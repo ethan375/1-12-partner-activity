@@ -45,9 +45,10 @@ app.get('/coins/new',(req, res)=>{
 app.post('/coins', (req,res)=>{
   // res.send(req.body)
   Coin.create(req.body, (err, createdCoin)=>{
-    if(err){console.log(err)
-    }else{
-      res.send(createdCoin);
+    if(err) {console.log(err)
+    }else {
+      // res.send(createdCoin);
+      res.redirect("/coins")
     }
 
   })
