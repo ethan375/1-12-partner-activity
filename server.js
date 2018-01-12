@@ -7,7 +7,7 @@ app.get('/coins/new',(req, res)=>{
 
 app.post('/coins', (req,res)=>{
   res.send('posted')
-})
+});
 
 
 app.listen(3000, ()=>{
